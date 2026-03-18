@@ -38,7 +38,7 @@ jobs:
           commit_message: autoformat
       - name: Comment No-Changes
         if: steps.auto-commit-action.outputs.changes_detected == 'false'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             github.rest.issues.createComment({
@@ -69,7 +69,7 @@ jobs:
           commit_message: repackage
       - name: Comment No-Changes
         if: steps.auto-commit-action.outputs.changes_detected == 'false'
-        uses: actions/github-script@v6
+        uses: actions/github-script@v8
         with:
           script: |
             github.rest.issues.createComment({
